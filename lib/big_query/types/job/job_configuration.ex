@@ -28,7 +28,7 @@ defmodule BigQuery.Types.ConfigurationQuery do
   * query - [Required] BigQuery SQL query to execute.
   * tableDefinitions - [Optional] If querying an external data source outside of BigQuery, describes it.
   * useLegacySql - [Experimental] Specifies whether to use BigQuery's legacy SQL dialect for this query.
-  * useQueryCache - [Optional] Whether to look for the result in the query cache. 
+  * useQueryCache - [Optional] Whether to look for the result in the query cache.
   * userDefinedFunctionResources - [Experimental] Describes user-defined function resources used in the query.
   * writeDisposition - [Optional] Specifies the action that occurs if the destination table already exists.
   """
@@ -36,7 +36,7 @@ defmodule BigQuery.Types.ConfigurationQuery do
     :allowLargeResults, :createDisposition, :defaultDataset,
     :destinationTable, :flattenResults, :maximumBillingTier, :priority, :query,
     :tableDefinitions, :useLegacySql, :useQueryCache,
-    :userDefinedFunctionResources, :writeDisposition]
+    :userDefinedFunctionResources, :writeDisposition, :labels]
 
   @type t :: %__MODULE__{
     allowLargeResults: boolean,
@@ -51,7 +51,8 @@ defmodule BigQuery.Types.ConfigurationQuery do
     useLegacySql: boolean,
     useQueryCache: boolean,
     userDefinedFunctionResources: [map()],
-    writeDisposition: String.t
+    writeDisposition: String.t,
+    labels: map()
   }
 end
 
